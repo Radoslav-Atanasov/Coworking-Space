@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Consulting Website</title>
+</head>
+<body>
+	<header class="header" id="headerId">
+		<div class="mainContainer container0">
+			<div class="headerLeft" id="headerLeftID">
+				<a class="navLogo" href="">The Annex<span class="navDot">.</span></a>
+			</div>	
+			<nav class="headerRight" id="headerRightID">
+				<a id="ebasi" class="aNav" href="#">Home</a>
+				<a class="aNav" href="#about">About</a>
+				<a class="aNav" href="#community">Community</a>
+				<a class="aNav" href="#spaces">Spaces</a>
+				<a class="aNav" href="#membership">Membership</a>
+				<a class="aNav" href="#section8ID">Contact</a>
+				<a class="navLogin" id="modalLogin" href="#"><img src="images/logIn.png">Log in</a>
+			</nav>
+			<a class="navButton" href="javascript:void(0);" onclick="navFunction()">
+				<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="#3ECCB5" class="bi bi-menu-up navButtonSvg" viewBox="0 0 16 16" onclick="hideLogo()">
+  				<path d="M7.646 15.854a.5.5 0 0 0 .708 0L10.207 14H14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3.793l1.853 1.854zM1 9V6h14v3H1zm14 1v2a1 1 0 0 1-1 1h-3.793a1 1 0 0 0-.707.293l-1.5 1.5-1.5-1.5A1 1 0 0 0 5.793 13H2a1 1 0 0 1-1-1v-2h14zm0-5H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v2zM2 11.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 0-1h-8a.5.5 0 0 0-.5.5zm0-4a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11a.5.5 0 0 0-.5.5zm0-4a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 0-1h-6a.5.5 0 0 0-.5.5z"/>
+				</svg>
+			</a> 	
+		</div>	
+	</header>
+	<section class="section1">
+
+			<!-- First Modal starts -->
+		<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title myClassH5Modal" id="exampleModalLabel">Log in</h5>
+		      </div>
+		      <div class="modal-body">
+		        <form id="loginForm">
+		        	<label>E-Mail</label>
+		        	<input type="email" required="" name="" placeholder="E-mail" id="inputEmail">
+		        	<label>Password</label>
+		        	<input type="Password" required="" name="" placeholder="Password" value="">
+		        	<div class="wrapToReg"><a class="toReg" id="toRegID">Don't have an account?</a></div><!--  Wrapping the a tag with a div, so the a tag can be pushed to the right -->
+		        	
+		        </form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="Submit" id="btnLogin" class="btn btn-primary btnModalLogin btn-lg" form="loginForm">Log in</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- First Modal ends-->
+
+		<!-- Second Modal starts -->
+		<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      	<div class="modal-header">		
+		        <h5 class="modal-title myClassH5Modal" id="exampleModalLabel">Create new account</h5>
+		     	</div>
+		      	<div class="modal-body">
+		      	<form id="regForm">
+			        <label for="email">E-mail</label>
+			        <input type="email" name="" placeholder="E-mail" required="">
+			        <label for="password">Password</label>
+			        <input type="password" id="inputPassword" name="" placeholder="password" required="">
+			        <div class="wrapIdPassValid"><span id="IdPassValid" class="IdPassValidClass"></span></div>
+			        <label for="password">Repeat your password</label>
+			        <input type="password" name="" placeholder="password" required="" id="repeatInputPassword">
+			        <span id="IdNotSamePass" class="notSamePassClass">The password is not the same</span>
+			        <span id="IdErrPass"></span>
+			        <span id="passReq">Your password must include at least three Uppercase and three Lowercase characters, three digits and three special symbols.</span>
+		        			
+			    </form>
+		      	</div>
+		      	<div class="modal-footer">
+		      	<button type="button" id="closelReg" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        	<button type="Submit" id="submitReg" class="btn btn-primary btnModalLogin btn-lg" form="regForm" disabled>Submit</button>
+		      	</div>
+		    </div>
+		  </div>
+		</div>
+		<!-- Second modal ends -->
+		
+		<!-- Third modal starts -->
+		<div class="modal fade " id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog modal-dialog-scrollable">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        <div class="accordion">
+					<div class="contentBox">
+						<div class="accLabel">Tab1</div>
+						<div class="accContent">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+					</div>
+					<div class="contentBox">
+						<div class="accLabel">Tab2</div>
+						<div class="accContent">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</div>
+					</div>
+					<div class="contentBox">
+						<div class="accLabel">Tab3</div>
+						<div class="accContent">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</div>
+					</div>
+					<div class="contentBox">
+						<div class="accLabel">Tab4</div>
+						<div class="accContent">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</div>
+					</div>
+				</div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- Third modal ends -->
+
+
+		<div class="bgFilter1"></div>	
+		<div class="mainContainer container1">
+			<div data-aos="fade-up" data-aos-duration="1500" class="wrapDiv1">
+				<h1>CO-WORKING</h1>
+				<p>IN AN INNOVATIVE ENVIRONMENT</p>
+				<a class="BookSpaceBtn" href="#" data-toggle="modal" data-target="#exampleModal3">BOOK A SPACE</a>
+			</div>
+		</div>
+	</section>	
+	<section id="about" class="section2">
+		<div class="mainContainer container2">
+			<div data-aos="fade-up" data-aos-duration="1500" class="aboutUs2">
+				<h2>ABOUT US</h2>
+				<p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</p>
+
+				<p>This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.</p>
+			</div>
+		</div>	
+
+
+	</section>
+	<section id="community" class="section3">
+		<div data-aos="fade-up" data-aos-duration="1500" class="mainContainer">
+			<h2>OUR COMMUNITY</h2>
+			<p>I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you.</p>
+		</div>
+	</section>
+	<section class="section4">
+		<div data-aos="fade-up" data-aos-duration="1500" class="mainContainer">
+			<div class="swiper-container">
+    			<div class="swiper-wrapper">
+				      <div class="swiper-slide slideer"><img src="images/a8.jpg"></div>
+				      <div class="swiper-slide slideer"><img src="images/a2.jpg"></div>
+				      <div class="swiper-slide slideer"><img src="images/a3.jpg"></div>
+				      <div class="swiper-slide slideer"><img src="images/a9.jpg"></div>
+				      <div class="swiper-slide slideer"><img src="images/a5.jpg"></div>
+				      <div class="swiper-slide slideer"><img src="images/a6.jpg"></div>
+				      <div class="swiper-slide slideer"><img src="images/a7.jpg"></div>
+				      <div class="swiper-slide slideer"><img src="images/a8.jpg"></div>
+				      <div class="swiper-slide slideer"><img src="images/a9.jpg"></div>
+    			</div>
+			    <!-- Add Pagination -->
+			    <!-- <div class="swiper-pagination"></div> -->
+			    <!-- Add Arrows -->
+			    <div class="swiper-button-next scaleArrowBtn"></div>
+			    <div class="swiper-button-prev scaleArrowBtn"></div>
+  			</div>
+		</div>
+	</section>
+	<section id="spaces" class="section5">
+		<div data-aos="fade-up" data-aos-duration="1500" class="mainContainer">	
+			<h2>SPACES</h2>
+			<p>I'm a paragraph. Click here to add your own text and edit me.</p>
+		</div>	
+	</section>
+	<section class="section6">
+		<div class="mainContainer width1920">
+			<a data-aos="fade-up" data-aos-duration="1500" class="grid6" href="">
+				<img class="imageImg" src="images/grid1.jpg">
+				<div class="imageOverlay"><p class="trans6">Open Space</p></div>
+			</a>
+			<a data-aos="fade-up" data-aos-duration="1500" class="grid6" href="">
+				<img class="imageImg" src="images/grid2.jpg">
+				<div class="imageOverlay"><p class="trans6">Private Office</p></div>
+			</a>
+			<a data-aos="fade-up" data-aos-duration="1500" class="grid6" href="">
+				<img class="imageImg" src="images/grid3.jpg">
+				<div class="imageOverlay"><p class="trans6">Events</p></div>
+			</a>
+			<a data-aos="fade-up" data-aos-duration="1500" class="grid6" href="">
+				<img class="imageImg" src="images/grid4.jpg">
+				<div class="imageOverlay"><p class="trans6">Meeting rooms</p></div>
+			</a>	
+		</div>
+	</section>
+	<section id="membership" class="section7">
+		<div class="mainContainer container7">
+			<div data-aos="fade-up" data-aos-duration="1500" class="divTop7">
+				<h2>MEMBERSHIP</h2>
+				<p>Become a member!</p>
+			</div>
+			<div class="divBottom7">
+				<div data-aos="fade-up" data-aos-duration="1500" class="divIcon7">
+					<img src="images/monitor.png">
+					<p>One Awesome Desk</p>
+				</div>
+				<div data-aos="fade-up" data-aos-duration="1500" class="divIcon7">
+					<img src="images/group.png">
+					<p>x5 Free One Hour Meeting Rooms</p>
+				</div>
+				<div data-aos="fade-up" data-aos-duration="1500" class="divIcon7">
+					<img src="images/bulb.png">
+					<p>Access to an Awesome Community of Innovative Individuals </p>
+				</div>
+				<div data-aos="fade-up" data-aos-duration="1500" class="divIcon7">
+					<img src="images/wifi.png">
+					<p>2GB Internet Speed</p>
+				</div>
+				<div data-aos="fade-up" data-aos-duration="1500" class="divIcon7">
+					<img src="images/phone.png">
+					<p>Unlimited Calls Abroad</p>
+				</div>
+				<div data-aos="fade-up" data-aos-duration="1500" class="divIcon7">
+					<img src="images/glass.png">
+					<p>Happy Hour Every Friday from 18.00 with Free Alcohol!</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section  class="section8" id="section8ID" >
+		<div class="mainContainer">
+			<div class="contactForm8">
+				<span data-aos="fade-up" data-aos-duration="1500" class="firstLetter8">contact <span class="firstLetter8">us</span></span>
+				<p data-aos="fade-up" data-aos-duration="1500">ADDRESS: 500 TERRY FRANCOIS STREET SAN FRANSISCO, CA 94158 TEL: 123-456-7890  |  INFO@MYSITE.COM</p>
+				<div data-aos="fade-up" data-aos-duration="1500" class="divContact8">
+					<p>Subscribe For Updates and Promotions</p>
+					<input type="email" name="" placeholder="Enter you email here*" required=" ">
+					<button>Get Updates</button>
+				</div>
+			</div>
+		</div>
+		<div class="bgFilter8"></div>
+	</section>
+	<section  class="section9" id="map">
+	</section>
+	<footer class="footer">
+		<div class="footerDiv1">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+		<div class="footerDiv2">
+			<a href="http://Youtube.com"><img src="images/youtube.png"></a>
+			<a href="http://instagram.com"><img src="images/instagram.png"></a>
+		</div>
+	
+	</footer>
+	
+
+	
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CL6XDQaX1-mLak2SFLI86qlsVBfuKNg&callback=initMap"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
